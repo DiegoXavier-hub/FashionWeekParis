@@ -1,0 +1,351 @@
+@import "_mixin.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700&display=swap');
+@font-face {
+    font-family: 'Raiderfont';
+    src: local('Raiderfont'), url('../fonts/Raiderfont.ttf') format('truetype');
+}
+
+$primary-color: #EFDE74;
+$second-color: #000;
+$third-color: #D8DBE2;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+
+    body{
+        font-family: 'Montserrat', 'Poppins';
+        background: $third-color;
+        color: $second-color;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        font-size: 1.5rem;
+        @include flexBox(column, flex-start, center);
+
+        /*Input do menu*/
+        input{
+            position: absolute;
+            top: -500px;
+            
+            &:checked + section + header nav .mobile-menu div:nth-child(1){
+                transform: rotate(-45deg);
+                top: 5px;
+            }
+            
+            &:checked + section + header nav .mobile-menu div:nth-child(2){
+                transform: rotate(-45deg);
+                opacity: 0;
+            }
+            
+            &:checked + section + header nav .mobile-menu div:nth-child(3){
+                transform: rotate(45deg);
+                top: 0;
+            }
+        }
+
+        /*Overlay*/
+        .overlay{
+            width: 100%;
+            height: 100vh;
+            @include flexBox(row, center, center);
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: size-overlay 0.1s 2.2s ease-in-out forwards;
+            z-index: 100;
+
+            div{
+                width: 333.3313%;
+                height: 100vh;
+                background: $primary-color;
+                display: inline;
+                z-index: 99;
+            }
+
+            $time: 1.1s;
+            .stripe-1{
+                animation: size-overlay $time 0.5s ease-in-out forwards;
+            }
+            .stripe-2{
+                animation: size-overlay $time 0.7s ease-in-out forwards;
+            }
+            .stripe-3{
+                animation: size-overlay $time 0.9s ease-in-out forwards;
+            }
+        }
+
+        /*Header*/
+        header{
+            width: 100%;
+            height: 5vh;
+            @include flexBox(row, space-between, center);
+
+            div{
+                width: 120px;
+                height: 5vh;
+                @include flexBox(row, space-evenly, center);
+
+                a{
+                    font-size: 1.5rem;
+                    color: $second-color;
+                    text-decoration: none;
+                    opacity: 0;
+                    animation: fadeRightL 0.7s 2.7s ease-in-out forwards;
+                }
+
+                svg{
+                    width: 20px;
+                    opacity: 0;
+                    animation: fadeRightL 0.7s 3s ease-in-out forwards;
+                }
+            }
+
+            nav{
+                width: 10%;
+                height: 8%;
+                @include flexBox(row, flex-start, center);
+            }
+            
+            label{
+                height: 25px;
+                width: 25px;
+                z-index: 70;
+                cursor: pointer;
+                margin: 10px 0 0 10px;
+                opacity: 0;
+                animation: fadeLeftR 0.7s 2.8s ease-in-out forwards;
+    
+                div{
+                    position: relative;
+                    display: block;
+                    height: 3px;
+                    width: 20px;
+                    border-radius: 30px;
+                    background: $second-color;
+                    transition: 0.7s !important;
+                    cursor: pointer;
+                    margin-left: 2px;
+
+                    &:nth-child(1){
+                        top: 0;
+                    }
+                    
+                    &:nth-child(2){
+                        top: 4px;
+                    }
+                    
+                    &:nth-child(3){
+                        top: 8px;
+                    }
+                }
+            }
+        }
+        
+        /*Main e Aside/Menu lateral*/
+        .content{
+            width: 100%;
+            height: 95vh;
+            @include flexBox(row, flex-start, center);
+
+            .social-medias{
+                width: 60px;
+                height: 100%;
+
+                @include flexBox(column, flex-end, center);
+                
+                div{
+                    height: 45%;
+                    margin-bottom: 100px;
+                    opacity: 0;
+                    @include flexBox(column, space-between, center);
+                    animation: fadeDown 0.7s 2.6s ease-in-out forwards;
+
+                    a{
+                        transform: rotate(-90deg) !important;
+                        font-size: 1.3rem;
+                        color: $second-color;
+                        text-decoration: none;
+
+                        &:hover{
+                            font-size: 1.4rem;
+                            margin-bottom: -1px;
+                        }
+                    }
+
+                }
+            }
+
+            main{
+                width: 100%;
+                height: 100%;
+                @include flexBox(row, space-between, center);
+                
+                /*texts*/ 
+                .text{
+                    transform: rotate(-90deg);
+
+                    & p:nth-child(1){
+                        font-family: 'Raiderfont';
+                        font-size: 10rem;
+                        letter-spacing: -7px;
+                        right: -30px;
+                        position: relative;
+                        z-index: 10;
+                        opacity: 0;
+                        animation: fadeRightRotatedL 0.7s 2s ease-in-out forwards;
+                    }
+
+                    & p:nth-child(2){
+                        font-family: 'Raiderfont';
+                        color: #EFDE74;
+                        font-size: 10rem;
+                        letter-spacing: 18px;
+                        position: relative;
+                        top: -60px;
+                        left: -20px;
+                        opacity: 0;
+                        animation: fadeUpRotated 0.7s 2.3s ease-in-out forwards;
+                    }
+
+                    & p:nth-child(3){
+                        font-family: 'Montserrat';
+                        font-size: 3.5rem;
+                        font-weight: 600;
+                        position: relative;
+                        top: -120px;
+                        right: -30px;
+                        opacity: 0;
+                        animation: fadeRightRotatedL 0.7s 2.2s ease-in-out forwards;
+                    }
+
+                    & p:nth-child(4){
+                        width: 300px;
+                        font-family: 'Montserrat';
+                        font-size: 1.36rem;
+                        opacity: 0;
+                        position: relative;
+                        left: 30px;
+                        top: -100px;
+                        animation: fadeRightRotatedL 0.7s 2.7s ease-in-out forwards;
+                    }
+                }
+
+                img{
+                    width: 500px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    opacity: 0;
+                    animation: fadeRightL 0.7s 2.8s ease-in-out forwards;
+                }
+
+                .logo-text{
+                    position: relative;
+                    bottom: -100px;
+                    opacity: 0;
+                    animation: fadeDown 0.7s 2.2s ease-in-out forwards;
+                }
+
+                .logo{
+                    font-family: 'Raiderfont';
+                    font-size: 4rem;
+                    letter-spacing: -2px;
+                    transform: rotate(-90deg);
+                    line-height: 30px;
+                }
+
+                .description{
+                    width: 300px;
+                    font-family: 'Raiderfont';
+                    position: relative;
+                    left: 105px;
+                    bottom: -105px;
+                    letter-spacing: -1px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+@keyframes size-overlay {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100vh);
+        display: none;
+    }
+}
+
+@keyframes fadeDown{
+    0%{
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    0%{
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUpRotated {
+    0%{
+        transform: translateX(-150px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeRightRotatedL {
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeRightL {
+    0%{
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeLeftR {
+    0%{
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
