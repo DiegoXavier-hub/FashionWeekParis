@@ -1,4 +1,5 @@
 @import "_mixin.scss";
+@import "_mediaQueries.scss";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700&display=swap');
 @font-face {
     font-family: 'Raiderfont';
@@ -17,15 +18,17 @@ $third-color: #D8DBE2;
 
 html{
     font-size: 62.5%;
+    overflow: hidden;
 
     body{
         font-family: 'Montserrat', 'Poppins';
         background: $third-color;
         color: $second-color;
-        width: 100vh;
-        height: 100vh;
-        overflow: hidden;
+        width: 100%;
+        height: 100%;
         font-size: 1.5rem;
+        position: fixed;
+        top: 0;
         @include flexBox(column, flex-start, center);
 
         /*Input do menu*/
@@ -192,6 +195,7 @@ html{
                 /*texts*/ 
                 .text{
                     transform: rotate(-90deg);
+                    z-index: 10;
 
                     & p:nth-child(1){
                         font-family: 'Raiderfont';
@@ -242,10 +246,11 @@ html{
                 img{
                     width: 500px;
                     position: absolute;
-                    bottom: 0;
-                    left: 45%;
+                    bottom: 0px;
+                    left: 40%;
                     opacity: 0;
                     animation: fadeRightL 0.7s 2.8s ease-in-out forwards;
+                    z-index: -5;
                 }
 
                 .logo-text{
@@ -277,6 +282,7 @@ html{
         }
     }
 }
+
 
 @keyframes size-overlay {
     0%{

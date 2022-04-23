@@ -1,0 +1,101 @@
+@media screen and (max-width: 970px){
+    .logo-text{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 870px){
+    .text p:nth-child(4){
+        display: none;
+    }
+    
+        img{
+            left: 30% !important;
+        }
+}
+
+@media screen and (max-width: 670px){
+    .text{
+        transform: rotate(0deg) !important;
+
+        & p:nth-child(1){
+            font-size: 9rem !important;
+            right: -74px !important;
+            animation: fadeRightL 0.7s 2s ease-in-out forwards !important;
+        }
+
+        & p:nth-child(2){
+            font-size: 9rem !important;
+            top: -60px !important;
+            left: 20px !important;
+            animation: fadeLeftR 0.7s 2.3s ease-in-out forwards!important;
+            text-shadow: 5px 5px 80px rgba(0, 0, 0, 0.516);
+        }
+
+        & p:nth-child(3){
+            top: -50px !important;
+            right: -50px !important;
+            animation: fadeDown 0.7s 2.2s ease-in-out forwards;
+        }
+    }
+
+    img{
+        width: 430px !important;
+        bottom: 0px !important;
+        left: 20% !important;
+    }
+}
+
+@media screen and (max-width: 615px){
+    .text{
+        & p:nth-child(1){
+            font-size: 6rem !important;
+            right: -50px !important;
+            letter-spacing: -2px !important;
+        }
+
+        & p:nth-child(2){
+            font-size: 6rem !important;
+            top: -45px !important;
+            left: 33px !important;
+            letter-spacing: 12px !important;
+        }
+    }
+
+    img{
+        
+        left: 15% !important;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .text{
+        transform: rotate(0deg) !important;
+
+        & p:nth-child(1){
+            font-size: 5rem !important;
+            top: -200px !important;
+            right: -13px !important;
+            animation: fadeRightL 0.7s 2s ease-in-out forwards !important;
+        }
+
+        & p:nth-child(2){
+            font-size: 5rem !important;
+            top: -240px !important;
+            left: -16px !important;
+            letter-spacing: normal;
+        }
+
+        & p:nth-child(3){
+            font-size: 2rem !important;
+            top: -220px !important;
+            right: 0px !important;
+        }
+    }
+
+    img{
+        width:350px !important;
+        left: 10% !important;
+    }
+}
